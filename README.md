@@ -13,7 +13,7 @@ set appropriate photoshop installation loaction in run_interval_script.sh file
 
 first install required dependencies using `npm i` \ 
 then use `npm run start` to run the script \
-It can also run by double clicking on run_photoshop_timelapse.sh
+It can also run by double clicking on run_photoshop_timelapse.sh \
 Note that before running the script make sure that photoshop is running and the file is saved atleast once. please create a folder name `timelapse` where the file is saved this is the folder where timelapse interval files will be stored. name of the folder can be changed in save_timelapse_interval.jsx
 
 

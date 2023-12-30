@@ -1,15 +1,17 @@
 # photoshop-art-timelapse
 Node script which uses cron job and photoshop jsx script to save a screenshot of the photo/art at given interval of time. so later those screenshots can be combined into a time-lapse of the art process.
 
+# interval
+
+interval configuration will be stored in .env file. if not created earlier please create using env-sample provided. please set interval time and type as needed. interval can be given either in mins or seconds.
+
+
 # photoshop art timelapse script
 
 first install required dependencies using `npm i` \ 
 set appropriate photoshop installation loaction in sync.sh file \
 then use `npm run start` to run the script \
 Note that before running the script make sure that photoshop is running and the file is saved atleast once. please create a folder name `timelapse` where the file is saved this is the folder where timelapse interval files will be stored. the folder name can be configured in .env
-
-# interval
-
 
 
 # photoshop save warning

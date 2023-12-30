@@ -1,0 +1,19 @@
+{
+  "name": "timelapse",
+  "version": "1.0.0",
+  "description": "run photoshop script for art timelapses",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "adobe-node"
+  ],
+  "author": "Sumit Mangela",
+  "license": "ISC",
+  "devDependencies": {
+    "cron": "3.1.6",
+    "dotenv": "^16.3.1"
+  }
+}

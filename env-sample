@@ -1,0 +1,4 @@
+#Interval
+
+INTERVAL_TIME = 1
+INTERVAL_TYPE = min # min | sec

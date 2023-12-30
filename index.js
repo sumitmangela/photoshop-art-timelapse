@@ -20,7 +20,7 @@ CronJob.from({
 	cronTime: getCronTime(),
 	onTick: function () {
 		console.log('Saving image...');
-		exec('sh sync.sh', (err, output) => {
+		exec('sh run_interval_script.sh', (err, output) => {
             if (err) { return }
         })
 	},

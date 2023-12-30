@@ -13,21 +13,23 @@ https://forums.adobe.com/message/4453915#4453915
 main();
 
 function main() {
+    const saveFolder = 'timelapse'; //name of the save folder
     if (!documents.length) return;
     try {
-        var savePath = activeDocument.path;
+        const savePath = Folder(activeDocument.path +  "/" + saveFolder);
     } catch (e) {
         alert("You must save this document first!");
     }
-    var fileList = savePath.getFiles("*.jpg").sort().reverse();
+    const fileList = savePath.getFiles("*.jpg").sort().reverse();
     var Suffix = 0;
     if (fileList.length) {
         Suffix = Number(fileList[0].name.replace(/\.[^\.]+$/, '').match(/\d+$/));
     }
-    Suffix = zeroPad(Suffix + 1, 4);
+    Suffix = Suffix + 1; 
+    // Suffix = zeroPad(Suffix, 4); // uncomment this to enable zeropadding
     var saveFile = File(savePath + "/" + Suffix + ".jpg");
-    SaveJPEG(saveFile, 4); // JPEG compression level
-}
+    SaveJPEG(saveFile, 3); // JPEG compression level
+} 
 
 function SaveJPEG(saveFile, jpegQuality) {
     jpgSaveOptions = new JPEGSaveOptions();

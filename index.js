@@ -19,7 +19,7 @@ const getCronTime = () =>{
 CronJob.from({
 	cronTime: getCronTime(),
 	onTick: function () {
-		console.log('Saving...');
+		console.log('Saving image...');
 		exec('sh sync.sh', (err, output) => {
             if (err) { return }
         })

@@ -5,13 +5,15 @@ Node script which uses cron job and photoshop jsx script to save a screenshot of
 
 interval configuration will be stored in .env file. if not created earlier please create using env-sample provided. please set interval time and type as needed. interval can be given either in mins or seconds.
 
+# photoshop location configuration
 
-# photoshop art timelapse script
+set appropriate photoshop installation loaction in sync.sh file
+
+# running photoshop art timelapse script
 
 first install required dependencies using `npm i` \ 
-set appropriate photoshop installation loaction in sync.sh file \
 then use `npm run start` to run the script \
-Note that before running the script make sure that photoshop is running and the file is saved atleast once. please create a folder name `timelapse` where the file is saved this is the folder where timelapse interval files will be stored. the folder name can be configured in .env
+Note that before running the script make sure that photoshop is running and the file is saved atleast once. please create a folder name `timelapse` where the file is saved this is the folder where timelapse interval files will be stored. name of the folder can be changed in save_timelapse_interval.jsx
 
 
 # photoshop save warning

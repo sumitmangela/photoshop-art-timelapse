@@ -22,4 +22,6 @@ Note that before running the script make sure that photoshop is running and the 
 to disable save warning go to `C:\Users\[User Name]\AppData\Roaming\Adobe\[Photoshop_version]\[Photoshop_version]Settings\` \
 find file named `PSUserConfig.txt` and add this line to it `WarnRunningScripts 0`
 
+# file names
 
+by default filenames will be timestamps so as they wont be sequential it wont work if you load it as image sequence so I suggest renaming it later using a bulk renamer. If you want to get sequentials file names right away then uncomment that logic in save_timelapse_interval.jsx and comment line for timestamp file names

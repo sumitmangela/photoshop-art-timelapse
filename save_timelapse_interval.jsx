@@ -20,14 +20,18 @@ function main() {
     } catch (e) {
         alert("You must save this document first!");
     }
-    const fileList = savePath.getFiles("*.jpg").sort().reverse();
-    var Suffix = 0;
-    if (fileList.length) {
-        Suffix = Number(fileList[0].name.replace(/\.[^\.]+$/, '').match(/\d+$/));
-    }
-    Suffix = Suffix + 1; 
-    // Suffix = zeroPad(Suffix, 4); // uncomment this to enable zeropadding
-    var saveFile = File(savePath + "/" + Suffix + ".jpg");
+
+    /* Uncomment this for incremental numbering */
+    // const fileList = savePath.getFiles("*.jpg").sort().reverse();
+    // var Suffix = 0;
+    // if (fileList.length) {
+    //     Suffix = Number(fileList[0].name.replace(/\.[^\.]+$/, '').match(/\d+$/));
+    // }
+    // Suffix = zeroPad(Suffix + 1, 6); 
+    // var saveFile = File(savePath + "/" + Suffix + ".jpg");
+
+    /* timestamp numbering */
+    var saveFile = File(savePath + "/" + new Date().valueOf() + ".jpg");
     SaveJPEG(saveFile, 3); // JPEG compression level
 } 
 

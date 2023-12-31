@@ -16,25 +16,22 @@ const getCronTime = () =>{
 	}
 }
 
+const executeIntervalScript = () =>{
+	console.log('script execute')
+	exec('sh run_interval_script.sh', (err, output) => {
+		if (err) { return }
+	})
+}
+
+console.log('Script started!! Saving first image...');
+executeIntervalScript(); //running first iteration immediately
+
 CronJob.from({
 	cronTime: getCronTime(),
 	onTick: function () {
-		console.log('Saving image...');
-		exec('sh run_interval_script.sh', (err, output) => {
-            if (err) { return }
-        })
+		console.log('Saving current image...');
+		executeIntervalScript(); //running iteration on each interval
 	},
 	start: true,
 	timeZone: 'America/Los_Angeles'
 });
-
-
-
-
-// C:\Program Files\Adobe\Adobe Photoshop 2022\Photoshop.exe D:\Backup\Sumit\photoshop\scripts\save_timelapse_interval.jsx
-
-// C:\"Program Files"\Adobe\"Adobe Photoshop 2022"\Photoshop.exe D:\Backup\Sumit\photoshop\scripts\save_timelapse_interval.jsx
-
-// /c/Program Files/Adobe/Adobe Photoshop 2022/Photoshop.exe /d/Backup/Sumit/photoshop/scripts/save_timelapse_interval.jsx
-
-// /c/"Program Files"/Adobe/"Adobe Photoshop 2022"/Photoshop.exe /d/Backup/Sumit/photoshop/scripts/save_timelapse_interval.jsx
